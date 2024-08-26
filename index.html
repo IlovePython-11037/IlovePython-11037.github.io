@@ -2,24 +2,30 @@
 <html>
     <head>
         <title>Tyler's amazing website</title>
+        <link rel="stylesheet" href="style.css">
 
     </head>
     <body>
-        <!--Sidebar section-->
-        <div>
-            <nav>
-                <h1>Tyler's Glorious website</h1>
-                <ul> 
-                    <li><a href="index.html"> Home</a></li>
-                    <li><a href="portfolio.html"> Portfolio</a></li>
-                </ul>
-            </nav>     
+            <!--Sidebar section-->
+        <div id="all-contents">
+            <div class="sidebar">
+                <nav id="nav-ul">
+                    <h1>Tyler's Glorious website</h1>
+                    <ul> 
+                        <li class="nav-li"><a href="index.html"> Home</a></li>
+                        <li class="nav-li"><a href="portfolio.html"> Portfolio</a></li>
+                    </ul>
+                </nav>
+            </div>
+
             <!--Content section-->
-            <div>
-                <img src="https://upload.wikimedia.org/wikipedia/en/3/3b/SpongeBob_SquarePants_character.svg">
+            <main>
+            <div class="content">
+                <img class="sidebar-img" src="https://upload.wikimedia.org/wikipedia/en/3/3b/SpongeBob_SquarePants_character.svg">  
                 <h2>Tyler Magee</h2>
                 <p>Student at East ascension highschool</p>
-                <div>
+                <!--Interest section-->
+                <div id="interests">
                     <h3>Interest</h3>
                     <ul>
                         <li>Cars</li>
@@ -28,8 +34,6 @@
                     </ul>
                 </div>
             </div>
-            <main>
-
             </main>
         </div>
     </body>
