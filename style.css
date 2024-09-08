@@ -12,7 +12,8 @@ body {
 /* navigation menu */
 nav {
     background: #ff629d;
-    margin: 0 auto;
+    position: relative;
+    margin: 10px;
     display: flex;
     padding: 10px;
     border-radius: 25px;
@@ -39,6 +40,7 @@ a {
 
 /* main container area beneath menu */
 main {
+    border-radius: 25px;
     background: white;
     display: flex;
 }
@@ -74,7 +76,8 @@ h2, h3 {
     }
 
     #portfolio li {
-        background: #fff;
+        background: #55d1d0
+        ;
         padding: 10px;
         border-radius: 10px;
         margin-bottom: 10px;
@@ -86,7 +89,7 @@ h2, h3 {
 
     #portfolio a {
         text-decoration: none;
-        color: #454545;
+        color: white;
     }
 
     /* responsive web design */
