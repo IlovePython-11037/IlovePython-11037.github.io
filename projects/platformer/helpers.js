@@ -380,6 +380,10 @@ function deathOfPlayer() {
     canvas.height / 6 + canvas.height / 3,
     (canvas.width / 16) * 14
   );
+  const myImage = new Image(100, 200);
+  myImage.src = "ULTRAKILL.jpg";
+  document.body.appendChild(myImage
+  );
   if (keyPress.any) {
     keyPress.any = false;
     window.location.reload();

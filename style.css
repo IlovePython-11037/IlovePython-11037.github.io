@@ -1,11 +1,14 @@
 body {
-    background: #55d1d0;
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
+    url(https://i.pinimg.com/originals/f3/7f/ed/f37fed439993217912c3cb1e93c719fd.png);
+    background-size: auto;
+    /*background: #55d1d0;*/
     color: rgb(45, 45, 45);
     padding: 10px;
     font-family: arial;
 }
 #all-contents {
-  max-width: 800px;
+  max-width: 1000px;
     margin: auto;
 }
 
