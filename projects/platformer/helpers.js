@@ -357,7 +357,8 @@ function projectileCollision() {
   }
 }
 
-function deathOfPlayer() {
+function deathOfPlayer(){
+  /*
   ctx.fillStyle = "grey";
   ctx.fillRect(
     canvas.width / 4,
@@ -380,10 +381,9 @@ function deathOfPlayer() {
     canvas.height / 6 + canvas.height / 3,
     (canvas.width / 16) * 14
   );
-  const myImage = new Image(100, 200);
-  myImage.src = "ULTRAKILL.jpg";
-  document.body.appendChild(myImage
-  );
+  */
+  ctx.drawImage(deathImage, 0,0, 1400, 750); 
+
   if (keyPress.any) {
     keyPress.any = false;
     window.location.reload();
@@ -414,15 +414,20 @@ function playerFrictionAndGravity() {
 }
 
 function drawPlatforms() {
+  const img = new Image();
+  img.src = "images/stoneTexure.jpg";
+  // Only use the image after it's loaded
+  ///img.onload = () => {
+  const pattern = ctx.createPattern(img, "repeat");
   for (var i = 0; i < platforms.length; i++) {
-    ctx.fillStyle = "grey";
+    ctx.fillStyle = pattern;
     ctx.fillRect(
       platforms[i].x,
       platforms[i].y,
       platforms[i].width,
       platforms[i].height
     );
-  }
+  };
 }
 
 function drawGrid() {
