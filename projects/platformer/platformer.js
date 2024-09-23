@@ -5,6 +5,9 @@ $(function () {
   window.addEventListener("load", loadJson);
   canvas.style = "position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; margin: auto;";
 
+  
+
+
   function setup() {
     if (firstTimeSetup) {
       deathImage = document.getElementById("ULTRAKILL");
@@ -22,6 +25,7 @@ $(function () {
     createPlatform(-50, canvas.height - 10, canvas.width + 100, 200); //right
     createPlatform(-50, -50, 50, canvas.height + 500); //bottom
     createPlatform(canvas.width, -50, 50, canvas.height + 100);
+
 
     /**
      * Uncomment the drawGrid() function call below to add a "grid" to your platformer game's screen
@@ -81,6 +85,7 @@ $(function () {
     //////////ONLY CHANGE ABOVE THIS POINT///////////
     /////////////////////////////////////////////////
   }
+  
 
   registerSetup(setup);
 });
