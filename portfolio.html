@@ -2,14 +2,16 @@
 
 <html>
   <head>
-    <script src = "toggleTheme.js"></script> 
+    <script>
+      var style = localStorage.getItem("style");
+      var theme = document.getElementsByTagName("link")[0];
+      theme.setAttribute("href", style);
+    </script> 
     <title>Tyler's Amazing website</title>
-    <link rel="stylesheet" href= "style2.css">
+    <link rel="stylesheet" href= "/stylesheets/style2.css">
     <link rel="icon" href="https://www.pngall.com/wp-content/uploads/15/Miku-PNG-Image.png">
   </head>
-
   <body>
-    
     <div id="all-contents">
         <nav>
             <h1>Tyler's Glorious Website</h1>

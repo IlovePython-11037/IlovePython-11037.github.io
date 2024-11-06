@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script>
+      var theme = document.getElementsByTagName("link")[0];
+      var style = theme.getAttribute('href');
+      window.localStorage.setItem("style", style);
+    </script>
     <script src="toggleTheme.js"></script>
-    <audio autoplay src="Elfen Lied - Lilium Full - High Quality.mp3"></audio>
+    <audio autoplay src="stylesheets/audio/Elfen Lied - Lilium Full - High Quality.mp3"></audio>
     <title>Tyler's amazing website</title>
-    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="stylesheets/style2.css">
     <link rel="icon" href="https://www.pngall.com/wp-content/uploads/15/Miku-PNG-Image.png">
   </head>
   <body>
@@ -14,7 +19,14 @@
         <h1>Tyler's Glorious website</h1>
         <ul>
           <li class="nav-li"><a href="index.html"> Home</a></li>
-          <li class="nav-li"><a href="portfolio.html"> Portfolio</a></li>
+          <div class ="dropdown">
+            <li class="nav-li"><a href="portfolio.html"> Portfolio</a></li>
+            <div class="dropdown-content">
+              <a href="projects/platformer/">Platformer</a>
+              <a href="projects/bouncing-box/">Bouncing Box</a>
+              <a href="projects/circularity/">Circularity</a>
+            </div>
+          </div>
           <button class="nav-li" onclick="toggleTheme()">Switch</button>
         </ul>
       </nav>
@@ -22,16 +34,16 @@
       <main>
         <!--Sidebar-->
         <div class="sidebar">
-          <img class="sidebar-img" src="eye.gif"/>
+          <img class="sidebar-img" src="/stylesheets/Images/eye.gif"/>
         </div>
 
         <!--Content section-->
         <div class="content">
-          <h2>Tyler Magee</h2>
+          <h2 id="white">Tyler Magee</h2>
           <p>Student at East ascension highschool</p>
           <!--Interest section-->
           <div id="interests">
-            <h3>Interest</h3>
+            <h3 id="white">Interest</h3>
             <ul>
               <li>Cars</li>
               <li>Computers</li>
