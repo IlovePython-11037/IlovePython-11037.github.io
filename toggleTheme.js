@@ -40,7 +40,7 @@ function toggleTheme() {
   else if (theme.getAttribute("href") === 'stylesheets/style4.css') {
     theme.setAttribute("href", "stylesheets/style5.css");
     audio.setAttribute("src", "");
-    img.setAttribute("src", "https://wallpapers-clan.com/wp-content/uploads/2021/01/cyberpunk-2077-samurai-logo-black-wallpaper-scaled.jpg");
+    img.setAttribute("src", "stylesheets/Images/wonder-day-png-cyberpunk-2077-3.png");
     document.getElementsByTagName("img")[2].setAttribute("src", "");
     document.getElementsByTagName("img")[1].setAttribute("src", "");
   }

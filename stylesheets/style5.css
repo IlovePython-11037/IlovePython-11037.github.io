@@ -164,7 +164,7 @@ main {
 
 .sidebar-img {
     margin-top: 5px;
-    width: 145px;
+    width: 200px;
     height: auto;
 }
 
@@ -249,7 +249,8 @@ h2, h3 {
     }
 
     .sidebar-img {
-         width: 100%;
+        width: 100%;
+        
     }
 
     p,
