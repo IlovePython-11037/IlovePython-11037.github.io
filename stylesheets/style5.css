@@ -41,7 +41,7 @@ html{
     display: none;
     position: absolute;
     background-color: #f1f1f1;
-    min-width: 160px;
+    min-width: 18px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
@@ -65,7 +65,7 @@ button{
 }
 
 #all-contents {
-    max-width: 1000px;
+    max-width: 111vh;
     margin: auto;
     animation-duration: 2s;
     animation-name: slidein;
@@ -86,9 +86,9 @@ button{
 /* navigation menu */
 nav {
 
-    height:48px;
+    height:5vh;
     justify-content:center;
-    max-height: 70px;
+    max-height: 8vh;
     min-width:250px;
 
     text-align:center;
@@ -139,7 +139,7 @@ h1 {
     border-style: solid;
     align-self: center;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 2vh;
     display:inline-block;
     padding: 0 10px;
 }
@@ -164,7 +164,7 @@ main {
 
 .sidebar-img {
     margin-top: 5px;
-    width: 200px;
+    width: 22vh;
     height: auto;
 }
 

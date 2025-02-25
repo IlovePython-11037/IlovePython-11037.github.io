@@ -164,18 +164,18 @@ function hasHitWall() {
   HINT: What will the row and column of the snake's head be if this were the case?
   */
 
-  if (snake.head.row === ROWS + 1){
-    return true;
-  }
-  else if (snake.head.column === COLUMNS + 1){
-    return true;
-  }
-  else if (snake.head.row === -1){
-    return true;
-  }
-  else if (snake.head.column === -1){
-    return true;
-  }
+    if (snake.head.row === ROWS + 1){
+      return true;
+    }
+    else if (snake.head.column === COLUMNS + 1){
+      return true;
+    }
+    else if (snake.head.row === -1){
+      return true;
+    }
+    else if (snake.head.column === -1){
+      return true;
+    }
 
   return false;
 }
@@ -187,16 +187,12 @@ function hasCollidedWithApple() {
   
   HINT: Both the apple and the snake's head are aware of their own row and column
   */
+ if (snake.head.column === apple.column && snake.head.row === apple.row){
+  return true
+ }
   if (hasCollidedWithApple()) {
-    handleAppleCollision();
-    if (snake.head.column === apple.column && snake.head.row === apple.row){
-      return true
+      handleAppleCollision();
     }
-    else{
-      return false
-    }
-
-  }
 
 
   return false;
@@ -224,8 +220,19 @@ function handleAppleCollision() {
   var column = 0;
 
   // code to determine the row and column of the snakeSquare to add to the snake
+  if (snake.tail.direction === 'left'){
+    makeSnakeSquare(snake.tail.row, snake.tail.column + 1)
+  }
+  else if (snake.tail.direction === 'right'){
+    makeSnakeSquare(snake.tail.row, snake.tail.column - 1)
+  }
+  else if (snake.tail.direction === 'down'){
+    makeSnakeSquare(snake.tail.row - 1, snake.tail.column)
+  }
+  else if (snake.tail.direction === 'up'){
+    makeSnakeSquare(snake.tail.row + 1, snake.tail.column)
+  }
 
-  makeSnakeSquare(row, column);
 }
 
 function hasCollidedWithSnake() {
