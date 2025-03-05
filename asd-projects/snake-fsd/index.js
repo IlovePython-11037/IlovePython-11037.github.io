@@ -122,6 +122,20 @@ function moveSnake() {
   
   */
 
+  for (let i = snake.body.length - 1; i > 0; i--){
+    var snakeSquare = snake.body[i];
+
+    var nextSnakeSquare = snake.body[i-1];
+    var nextRow = nextSnakeSquare.row;
+    var nextColumn = nextSnakeSquare.column;
+    var nextDirection = nextSnakeSquare.direction; 
+
+    snakeSquare.direction = nextDirection;
+    snakeSquare.row = nextRow;
+    snakeSquare.column = nextColumn;
+    repositionSquare(snakeSquare);
+  }
+
   //Before moving the head, check for a new direction from the keyboard input
   checkForNewDirection();
 
@@ -190,13 +204,10 @@ function hasCollidedWithApple() {
  if (snake.head.column === apple.column && snake.head.row === apple.row){
   return true
  }
+}
   if (hasCollidedWithApple()) {
       handleAppleCollision();
     }
-
-
-  return false;
-}
 
 function handleAppleCollision() {
   // increase the score and update the score DOM element
@@ -245,6 +256,13 @@ function hasCollidedWithSnake() {
   
   */
 
+  for (let i = 0; i < snake.body.length; i++){
+    if (i > 0){
+      if (snake.head.row === snake.body[i].row && snake.head.column === snake.body[i].column){
+        return true
+      }
+    }
+  }
   return false;
 }
 
@@ -292,7 +310,7 @@ function makeApple() {
  */
 function makeSnakeSquare(row, column) {
   // initialize a new snakeSquare Object
-  var snakeSquare = {};
+  let snakeSquare = {};
 
   // make the snakeSquare.element Object and append it to the board
   snakeSquare.element = $("<div>").addClass("snake").appendTo(board);
@@ -329,7 +347,7 @@ function handleKeyDown(event) {
   // TODO 6a: make the handleKeyDown function register which key is pressed
 
   activeKey = event.which;
-  console.log(activeKey);
+  //console.log(activeKey);
 
 }
 
@@ -356,9 +374,18 @@ function getRandomAvailablePosition() {
 
   /* Generate random positions until one is found that doesn't overlap with the snake */
   while (!spaceIsAvailable) {
-    randomPosition.column = Math.floor(Math.random() * COLUMNS);
-    randomPosition.row = Math.floor(Math.random() * ROWS);
-    spaceIsAvailable = true;
+    for (let i = 0; i < snake.body.length; i++){
+      randomPosition.column = Math.floor(Math.random() * COLUMNS);
+      randomPosition.row = Math.floor(Math.random() * ROWS);
+      let appleLocation = randomPosition.column * randomPosition.row;
+      let snakeLocation = snake.body[i].column * snake.body[i].row
+      if (appleLocation === snakeLocation){
+        spaceIsAvailable = false
+      }
+      else{
+        spaceIsAvailable = true;
+    }
+  }
 
     /*
     TODO 13: After generating the random position determine if that position is

@@ -89,11 +89,8 @@ function runProgram(){
       }
       else{
         $('body').css('backgroundColor', 'blue')
-      }
-      
+      }    
     }
-    
-
   }
   /* 
   Called in response to events.
@@ -166,7 +163,6 @@ function runProgram(){
   //////////////////////////////////////////////////////////////////////////////// 
   ////////////////////////// HELPER FUNCTIONS ////////////////////////////////////
   ////////////////////////////////////////////////////////////////////////////////
-
   
   //player1 and player2 are the repective HTML element
   //Example playerCollision("walker", "walker2")

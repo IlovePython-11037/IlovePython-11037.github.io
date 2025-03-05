@@ -599,7 +599,7 @@ As we can see, right now we are creating a new snakeSquare at position (0, 0). I
 
 > **HINT:** If the snake's tail is moving right, the next snakeSquare should be one column to the left. If the column is moving up, the next snakeSquare should be one row below. Use this logic to figure out the location of the new piece for all four directions that the snake might be moving.
 
-> **NOTE:** Completing this TODO will not make your snake grow properly. It will simply create each new snakeSquare behind the snake's tail, but they won't follow it yet. Complete the next TODO to make your snake properly grow.
+k> **NOTE:** Completing this TODO will not make your snake grow properly. It will simply create each new snakeSquare behind the snake's tail, but they won't follow it yet. Complete the next TODO to make your snake properly grow.
 
 <hr>
 
