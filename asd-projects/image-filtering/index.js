@@ -20,6 +20,10 @@ function resetAndRender() {
 // all of your apply functions
 function applyAndRender() {
   // Multiple TODOs: Call your apply function(s) here
+  applyFilterNoBackground(reddify)
+  applyFilterNoBackground(decreaseBlue)
+  //applyFilter(increaseGreenByBlue)
+
 
   
 
@@ -32,18 +36,63 @@ function applyAndRender() {
 /////////////////////////////////////////////////////////
 
 // TODO 1, 2 & 4: Create the applyFilter function here
+function applyFilter(filterFunction){
+  for(var row = 0; row < image.length; row++){
+    for(var column = 0; column < image[row].length; column++){
+      let rgbString = image[row][column];
+      let rgbNumbers = rgbStringToArray(rgbString);
+      filterFunction(rgbNumbers);
+      rgbString = rgbArrayToString(rgbNumbers);
+      image[row][column] = rgbString;
+
+    }
+  }
+}
 
 
 // TODO 7: Create the applyFilterNoBackground function
+function applyFilterNoBackground(filterFunction){
+  let backgroundColor = image[0][0];
+
+  for(var row = 0; row < image.length; row++){
+    for(var column = 0; column < image[row].length; column++){
+      let rgbString = image[row][column];
+
+      if(rgbString != backgroundColor){
+        let rgbNumbers = rgbStringToArray(rgbString);
+        filterFunction(rgbNumbers);
+        rgbString = rgbArrayToString(rgbNumbers);
+        image[row][column] = rgbString;
+      }
+    }
+  }
+}
 
 
 // TODO 5: Create the keepInBounds function
+function keepInBounds(aNumber){
+  let AHHHHHHHHHHH = 0
+  const zero = (aNumber < 0) ? AHHHHHHHHHHH = 0 :
+              (aNumber > 255) ? AHHHHHHHHHHH = 255 : AHHHHHHHHHHH = aNumber;
+  zero
+  return AHHHHHHHHHHH
+}
 
 
 // TODO 3: Create reddify function
-
+function reddify(anArray){
+  anArray[RED] = 200
+}
 
 // TODO 6: Create more filter functions
+function decreaseBlue(anArray){
+  anArray[BLUE] = keepInBounds(anArray[BLUE] - 50);
+
+}
+
+function increaseGreenByBlue(anArray){
+  anArray[GREEN] = keepInBounds(anArray[GREEN] + anArray[BLUE]);
+}
 
 
 // CHALLENGE code goes below here
