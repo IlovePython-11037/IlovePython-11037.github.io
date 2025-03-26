@@ -22,8 +22,8 @@ function applyAndRender() {
   // Multiple TODOs: Call your apply function(s) here
   applyFilterNoBackground(reddify)
   applyFilterNoBackground(decreaseBlue)
-  //applyFilter(increaseGreenByBlue)
-
+  applyFilter(increaseGreenByBlue)
+  pixelate()
 
   
 
@@ -89,10 +89,31 @@ function decreaseBlue(anArray){
   anArray[BLUE] = keepInBounds(anArray[BLUE] - 50);
 
 }
-
 function increaseGreenByBlue(anArray){
   anArray[GREEN] = keepInBounds(anArray[GREEN] + anArray[BLUE]);
 }
 
 
 // CHALLENGE code goes below here
+function pixelate(){
+  for(var row = 0; row < image.length; row++){
+    for(var column = 0; column < image[row].length; column++){
+      let nextPixel
+      const inArray = (column + 1 < image[row].length) ? nextPixel = image[row][column + 1] : nextPixel = image[row][column];
+      inArray;
+
+      let rgbString = image[row][column];
+
+      let rgbNumbers = rgbStringToArray(rgbString);
+      let nextPixelRgbNumber = rgbStringToArray(nextPixel);
+      
+      rgbNumbers[RED] = (nextPixelRgbNumber[RED] * Math.random())
+      rgbNumbers[GREEN] = (nextPixelRgbNumber[GREEN] * Math.random())
+      rgbNumbers[BLUE] = (nextPixelRgbNumber[BLUE] * Math.random())
+
+      rgbString = rgbArrayToString(rgbNumbers);
+      image[row][column] = rgbString;
+
+    }
+  }
+}
